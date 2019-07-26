@@ -1,0 +1,26 @@
+<div class="main">
+  <form #myForm="ngForm"  (ngSubmit)="onSubmit(myForm)">
+
+    <div *ngFor="let item of test">
+      <div class="form-group">
+        <label>{{item.number}} - {{ item.oneQuestion }}</label>
+        <br>
+        <span *ngFor="let answer of item.answers" >
+            <input type="radio"
+                   name="{{item.number}}"
+                   value="{{answer}}"
+                   ngModel
+                   [disabled]="myString !== undefined">
+          {{ answer }}
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+  <p *ngIf="myString">{{ myString }}</p>
+  <p *ngIf="myString < 5">Please try again</p>
+</div>
+

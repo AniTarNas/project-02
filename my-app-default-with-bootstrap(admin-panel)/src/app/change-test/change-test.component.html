@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <br>
+
+      <div class="text-center">
+        <p>Change Test</p>
+        <input type="number" class="form-control" placeholder="Test Number" [(ngModel)]="testNumber" #tNumber="ngModel" required pattern="[1-6]">
+        <br>
+        <input type="number" class="form-control" placeholder="Question Number" [(ngModel)]="questionNumber" #qNumber="ngModel" required pattern="[1-6]">
+        <br>
+        <input type="text" class="form-control" placeholder="Question" [(ngModel)]="question" required #tQuestion="ngModel" >
+        <br>
+        <input type="text" class="form-control" placeholder="Answer 01" [(ngModel)]="answer01" #tAnswer01="ngModel" required>
+        <br>
+        <input type="text" class="form-control" placeholder="Answer 02" [(ngModel)]="answer02" #tAnswer02="ngModel" required>
+        <br>
+        <input type="text" class="form-control" placeholder="Answer 03" [(ngModel)]="answer03" #tAnswer03="ngModel" required>
+        <br>
+        <input type="text" class="form-control" placeholder="True Answer" [(ngModel)]="trueAnswer" #ttAnswer="ngModel" required>
+        <br>
+
+        <button class="btn btn-info" (click)="changeTest()"
+                [disabled]="qNumber.invalid ||
+                tNumber.invalid ||
+                tAnswer01.invalid ||
+                tAnswer02.invalid ||
+                tAnswer03.invalid ||
+                ttAnswer.invalid">Change Test Question</button>
+        <br>
+        <br>
+      </div>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests01" >
+          <div>Test Number 01</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests02" >
+          <div>Test Number 02</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests03" >
+          <div>Test Number 03</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests04" >
+          <div>Test Number 04</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests05" >
+          <div>Test Number 05</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card card-body">
+        <div *ngFor="let test of tests06" >
+          <div>Test Number 06</div>
+          <div>Question number - {{ test.id }}</div>
+          <div>Question - {{ test.oneQuestion }}</div>
+          <div *ngFor="let answer of test.answers">
+            <p>Answers - <span>{{ answer }}</span></p>
+          </div>
+          <div>True answer - {{ test.trueAnswer }}</div>
+          <hr>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

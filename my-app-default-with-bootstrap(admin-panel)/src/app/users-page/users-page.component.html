@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br>
+
+      <div class="text-center">
+        <input type="text" placeholder="New User Name" class="form-control" [(ngModel)]="newUserName" #name="ngModel" required>
+        <br>
+        <input type="text" placeholder="New User Password" class="form-control" [(ngModel)]="newUserPassword" #password="ngModel" required>
+        <br>
+        <button class="btn btn-info" (click)="addNewUser()" [disabled]="name.invalid || password.invalid">Add User</button>
+      </div>
+      <br>
+      <table class="table table-dark">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">User Name</th>
+          <th scope="col">User Password</th>
+          <th scope="col">Level-01</th>
+          <th scope="col">Level-02</th>
+          <th scope="col">Level-03</th>
+          <th scope="col">Level-04</th>
+          <th scope="col">Level-05</th>
+          <th scope="col">Level-06</th>
+          <th scope="col">Finish</th>
+          <th scope="col">Level</th>
+        </tr>
+        </thead>
+
+        <tbody >
+        <tr *ngFor="let user of users, let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{ user.userName }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.level01 }}</td>
+          <td>{{ user.level02 }}</td>
+          <td>{{ user.level03 }}</td>
+          <td>{{ user.level04 }}</td>
+          <td>{{ user.level05 }}</td>
+          <td>{{ user.level06 }}</td>
+          <td>{{ user.finish }}</td>
+          <td>{{ user.level }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

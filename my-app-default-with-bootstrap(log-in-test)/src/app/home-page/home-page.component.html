@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3 text-center">
+      <br>
+      <input type="text" placeholder="User Name" [(ngModel)]="userName" class="form-control" #name="ngModel" required>
+      <br>
+      <input type="password" placeholder="User Password" [(ngModel)]="userPassword" class="form-control" (keydown.enter)="log()" #password="ngModel" required>
+      <br>
+      <button class="btn btn-info m-auto" (click)="log()" [disabled]="name.invalid || password.invalid">Log In</button>
+      <br>
+      <br>
+      <h5 class="text-danger">{{ errorMessage }}</h5>
+    </div>
+  </div>
+</div>
+
+
+
+
+

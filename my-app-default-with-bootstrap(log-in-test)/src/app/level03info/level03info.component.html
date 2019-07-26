@@ -1,0 +1,4 @@
+<div *ngFor="let info of levelsInfo,let i = index">
+  <h6 *ngIf="(i+1) == 3"> {{info.id}}. {{ info.title}}</h6>
+  <p *ngIf="(i+1) == 3"> {{ info.text }} </p>
+</div>
